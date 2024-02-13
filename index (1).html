@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate Profiles</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Candidate Profiles :</h1>
+  <div class="candidates-container">
+    </div>
+  <script>
+    const candidatesData = [{
+      Name: "Anshu Raja",
+      Education: "Graduate",
+      LanguageKnown: "Hindi,English",
+      ID: "2241023",
+      MobileNo:"9990967387",
+      EmailId:"anshu@gmail.com",
+      img :"/img1/Anshu.img.jpg",
+
+    },
+    {
+      Name1: "Iqbal Ansari",
+      Education1: "Graduate",
+      Languageknown1: "Hindi,English",
+      ID1: "2241001",
+      MobileNo:"9990967385",
+      EmailId:"iqbal@yahoo.co.in",
+      img:"/img1/Iqbal.img.jpg",
+      
+    },
+    {
+      Name2: "Kumar Priyam",
+      Education2: "Graduate",
+      LanguageKnown2: "Hindi,English",
+      ID2: "224132",
+      MobileNo:"9990967386",
+      EmailId:"kumarpriyam@hotmail.com",
+      img:"/img1/priyam.img.jpg",
+      
+    },
+    {
+        Name3: "Firdoush Ali",
+      Education3: "Post Graduate",
+      LanguageKnown3: "Hindi",
+      ID: "224155",
+      MobileNo: "8887844661",
+      EmailId: "firdoushali@gmail.com",
+      img:"/img1/firdoush.img.jpg",
+      
+      
+    },
+    {
+        Name4: "Shiva Nath",
+      Education4: "Graduate",
+      LanguageKnown3: "Hindi,English,Bhojpuri",
+      ID: "224133",
+      MobileNo: "9990967389",
+      EmailId: "shivnath@outlook.com",
+      img:"/img1/Shiva.img.jpg",
+      
+    },
+    ];
+
+    // Function to create and append candidate profile elements
+    function createCandidateProfile(candidateData) {
+      const profile = document.createElement('div');
+      profile.classList.add('candidate');
+
+      const name = document.createElement('h2');
+      name.textContent = candidateData.Name || candidateData.Name1 || candidateData.Name2 || candidateData.Name3 || candidateData.Name4;
+      profile.appendChild(name) ;
+
+      const education = document.createElement('p');
+      education.textContent = `Education: ${candidateData.Education || candidateData.Education1 || candidateData.Education2 || candidateData.Education3 || candidateData.Education4}`;
+      profile.appendChild(education);
+
+      const languages = document.createElement('p');
+      languages.textContent = `Language Known: ${candidateData["LanguageKnown"] || candidateData["Languageknown1"] || candidateData["LanguageKnown2"] || candidateData["LanguageKnown3"] || candidateData["LanguageKnown4"]}`;
+      profile.appendChild(languages);
+
+      const id = document.createElement('p');
+      id.textContent = `ID: ${candidateData.ID || candidateData.ID1 || candidateData.ID2 || candidateData.ID3 || candidateData.ID4}`;
+      profile.appendChild(id);
+
+
+      const MobileNo = document.createElement('p');
+      MobileNo.textContent = `Mobile No: ${candidateData.MobileNo || candidateData.MobileNo || candidateData.MobileNo || candidateData.MobileNo || candidateData.MobileNo}`;
+      profile.appendChild(MobileNo);
+
+      const EmailId = document.createElement('p');
+      id.textContent = `Email ID: ${candidateData.EmailId || candidateData.EmailId || candidateData.EmailId || candidateData.EmailId || candidateData.EmailId}`;
+      profile.appendChild(EmailId);
+
+      const img = document.createElement('img');
+      img.src = candidateData.img;
+      profile.appendChild(img);
+
+
+
+      const bookButton = document.createElement('button');
+      bookButton.textContent = 'Book Guide';
+      bookButton.addEventListener('click', () => {
+        // Add your click event handler here, e.g., to open a booking form or perform any relevant action
+      });
+      profile.appendChild(bookButton);
+
+      // Add profile to the container
+      const candidatesContainer = document.querySelector('.candidates-container');
+      candidatesContainer.appendChild(profile);
+    }
+
+    // Generate and display candidate profiles
+    candidatesData.forEach(createCandidateProfile);
+  </script>
+</body>
+</html>

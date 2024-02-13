@@ -1,0 +1,68 @@
+/* Overall container */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Fill entire viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    background-color: #f5f5f5; /* Adjust background color if needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 50px;
+    width: 100%; /* Adjust width as needed */
+    max-width: 700px; /* Set a maximum width for responsiveness */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    display: flex;
+    flex-direction: column; /* Arrange profiles vertically */
+    align-items: center; /* Center content within the container */
+  }
+  
+  /* Candidate profiles within the container */
+  .candidates-container {
+    width: 100%; /* Fill parent width */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .candidate {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1 0 auto; /* Make profiles grow evenly and shrink if needed */
+    /* Optional border for visual separation (uncomment to apply) */
+    /* border: 1px solid #ddd; */
+  }
+  
+  /* Individual profile elements */
+  .candidate img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover; /* Maintain aspect ratio while fitting within max dimensions */
+    margin-bottom: 20px;
+  }
+  
+  .candidate p {
+    margin-bottom: 5px;
+  }
+  
+  .candidate button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .candidate button:hover {
+    background-color: #3e8e41;
+  }
+  
